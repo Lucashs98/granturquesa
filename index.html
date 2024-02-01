@@ -56,7 +56,7 @@
             width: 300px;
             margin: 20px;
             padding: 15px;
-            background-color: #f4f4f4; /* Tom de turquesa */
+            background-color: #f4f4f4;
             border: 1px solid #ddd;
             border-radius: 8px;
             text-align: center;
@@ -141,8 +141,8 @@
 <body>
 
     <div class="header">
-        <h1>VIZINHOS EMPREENDEDORES</h1>
-        <p>Aqui você irá encontrar...</p>
+        <h1>EMPREENDEDORES GRAN TURQUESA</h1>
+        <p>Aqui você irá encontrar lojas e serviços de vizinhos empreededores</p>
     </div>
 
     <div class="filter-container">
@@ -231,7 +231,7 @@
                     company.nome.toLowerCase().includes(searchInput) || 
                     company.descricao.toLowerCase().includes(searchInput)
                 );
-                showCompanies('todas', filteredCompanies);
+                showCompanies('filteredCompanies');
             }
 
             // Exibir todas as empresas ao carregar a página
