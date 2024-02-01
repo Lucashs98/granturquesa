@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade do Condomínio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #00ced1;
+        }
+
+        .filter-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .filter-container label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        #category-filter {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .company {
+            width: 300px;
+            margin: 20px;
+            padding: 15px;
+            background-color: #f4f4f4; /* Tom de turquesa */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .company:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        .company:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .company img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .company h2 {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .company p {
+            color: #666;
+        }
+
+        .contact-button {
+            display: block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .company-details {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .company-details img {
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="filter-container">
+        <label for="category-filter">Filtrar por categoria:</label>
+        <select id="category-filter">
+            <option value="todas">Todas</option>
+            <option value="BELEZA E SAUDE">BELEZA E SAUDE</option>
+            <option value="SERVIÇOS">SERVIÇOS</option>
+            <option value="LOJAS">LOJAS</option>
+            <!-- Adicione mais categorias conforme necessário -->
+        </select>
+    </div>
+
+    <div class="gallery" id="company-gallery">
+        <!-- Empresas serão adicionadas dinamicamente com JavaScript -->
+    </div>
+
+    <div id="company-details" class="company-details">
+        <!-- Detalhes da empresa serão exibidos aqui -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const companies = [
+                // Dados das empresas
+                { categoria: 'SERVIÇOS', nome: 'FARBE', descricao: 'IMPRESSÃO DIGITAL', contato: '62 98573-6618', img: 'https://github.com/Lucashs98/granturquesa/FARBE.jpg' },
+                { categoria: 'LOJAS', nome: 'JM', descricao: 'TSHIRTS', contato: '@jm_tshirts4', img: 'https://github.com/Lucashs98/granturquesa/JM.jpg' },
+                // Adicione mais empresas conforme necessário
+            ];
+
+            const gallery = document.getElementById('company-gallery');
+            const filterSelect = document.getElementById('category-filter');
+            const companyDetailsContainer = document.getElementById('company-details');
+
+            // Função para exibir empresas na galeria
+            function showCompanies(category) {
+                gallery.innerHTML = '';
+
+                companies.forEach(company => {
+                    if (category === 'todas' || company.categoria === category) {
+                        const companyDiv = document.createElement('div');
+                        companyDiv.classList.add('company');
+
+                        companyDiv.innerHTML = `
+                            <img src="${company.img}" alt="Logo da ${company.nome}">
+                            <h2>${company.nome}</h2>
+                            <p>${company.descricao}</p>
+                            <a href="${company.contato}" class="contact-button">Contato</a>
+                        `;
+
+                        companyDiv.addEventListener('click', function () {
+                            // Mostrar detalhes da empresa ao clicar
+                            showCompanyDetails(company);
+                        });
+
+                        gallery.appendChild(companyDiv);
+                    }
+                });
+            }
+
+            // Função para exibir detalhes da empresa
+            function showCompanyDetails(company) {
+                companyDetailsContainer.innerHTML = `
+                    <h2>${company.nome}</h2>
+                    <p>${company.descricao}</p>
+                    <a href="${company.contato}" class="contact-button">Contato</a>
+                    <img src="${company.img}" alt="Logo da ${company.nome}">
+                `;
+            }
+
+            // Event listener para alterações no filtro
+            filterSelect.addEventListener('change', function () {
+                const selectedCategory = filterSelect.value;
+                showCompanies(selectedCategory);
+            });
+
+            // Exibir todas as empresas ao carregar a página
+            showCompanies('todas');
+        });
+    </script>
+</body>
+</html>
