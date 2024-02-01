@@ -73,9 +73,41 @@
             cursor: pointer;
             font-size: 16px;
         }
+        
+                .header {
+            text-align: left;
+            padding: 10px 20px;
+            background-color: #1F2C5A;
+            color: white;
+        }
+
+        .header button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
     </style>
 </head>
 <body>
+        <div class="header">
+        <button onclick="goBack()">Voltar</button>
+    </div>
+
+    <div class="company-details-page">
+        <h1>Farbe Impressão Digital</h1>
+
+        <!-- Conteúdo anterior... -->
+
+        <a href="#" class="contact-button">Entrar em Contato</a>
+    </div>
 
     <div class="company-details-page">
         <h1>Farbe Impressão Digital</h1>
@@ -94,6 +126,12 @@ De banners, panfletos, cartões, plotagem automotiva e adesivos, oferecemos solu
 
         <a href="#" class="contact-button">Entrar em Contato</a>
     </div>
+    
+        <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 </body>
 </html>
