@@ -44,6 +44,28 @@
             font-size: 16px;
         }
 
+        .search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #search-input {
+            padding: 8px;
+            font-size: 16px;
+            width: 60%;
+            margin-right: 10px;
+        }
+
+        #search-button {
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    
         .gallery {
             display: flex;
             flex-wrap: wrap;
@@ -137,6 +159,11 @@
         <!-- Detalhes da empresa serão exibidos aqui -->
     </div>
 
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Pesquisar...">
+        <button id="search-button" onclick="searchCompanies()">Buscar</button>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const companies = [
@@ -195,6 +222,14 @@
             // Exibir todas as empresas ao carregar a página
             showCompanies('todas');
         });
+        function searchCompanies() {
+            const searchInput = document.getElementById('search-input').value.toLowerCase();
+            const filteredCompanies = companies.filter(company =>
+                company.nome.toLowerCase().includes(searchInput) || 
+                company.descricao.toLowerCase().includes(searchInput)
+            );
+            showCompanies('todas', filteredCompanies);
+        }
     </script>
 </body>
 </html>
