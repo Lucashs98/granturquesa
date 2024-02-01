@@ -226,13 +226,13 @@
 
             // Função de pesquisa de empresas
             function searchCompanies() {
-    const searchInput = document.getElementById('search-input').value.toLowerCase();
-    const filteredCompanies = companies.filter(company =>
-        company.nome.toLowerCase().includes(searchInput) || 
-        company.descricao.toLowerCase().includes(searchInput)
-    );
-    showCompanies('todas', filteredCompanies);
-}
+                const searchInput = document.getElementById('search-input').value.toLowerCase();
+                const filteredCompanies = companies.filter(company =>
+                    company.nome.toLowerCase().includes(searchInput) || 
+                    company.descricao.toLowerCase().includes(searchInput)
+                );
+                showCompanies('todas', filteredCompanies);
+            }
 
             // Exibir todas as empresas ao carregar a página
             showCompanies('todas');
