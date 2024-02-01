@@ -231,7 +231,7 @@
                     company.nome.toLowerCase().includes(searchInput) || 
                     company.descricao.toLowerCase().includes(searchInput)
                 );
-                showCompanies('todas', filteredCompanies);
+                showCompanies('searchCompanies', filteredCompanies); // Correção aqui
             }
 
             // Exibir todas as empresas ao carregar a página
