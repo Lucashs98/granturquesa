@@ -1,3 +1,4 @@
+User
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -114,36 +115,9 @@
             width: 100%;
             border-radius: 5px;
         }
-
-        .search-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        #search-input {
-            padding: 8px;
-            font-size: 16px;
-            width: 60%;
-            margin-right: 10px;
-        }
-
-        #search-button {
-            padding: 8px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
     </style>
 </head>
 <body>
-
-    <div class="header">
-        <h1>VIZINHOS EMPREENDEDORES</h1>
-        <p>Aqui você irá encontrar...</p>
-    </div>
 
     <div class="filter-container">
         <label for="category-filter">Filtrar por categoria:</label>
@@ -154,11 +128,6 @@
             <option value="LOJAS">LOJAS</option>
             <!-- Adicione mais categorias conforme necessário -->
         </select>
-    </div>
-
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Pesquisar...">
-        <button id="search-button" onclick="searchCompanies()">Buscar</button>
     </div>
 
     <div class="gallery" id="company-gallery">
@@ -183,10 +152,10 @@
             const companyDetailsContainer = document.getElementById('company-details');
 
             // Função para exibir empresas na galeria
-            function showCompanies(category, companiesToShow = companies) {
+            function showCompanies(category) {
                 gallery.innerHTML = '';
 
-                companiesToShow.forEach(company => {
+                companies.forEach(company => {
                     if (category === 'todas' || company.categoria === category) {
                         const companyDiv = document.createElement('div');
                         companyDiv.classList.add('company');
@@ -224,21 +193,8 @@
                 showCompanies(selectedCategory);
             });
 
-                        // Exibir todas as empresas ao carregar a página
+            // Exibir todas as empresas ao carregar a página
             showCompanies('todas');
-            
-            // Função de pesquisa de empresas
-            function searchCompanies() {
-        const searchInput = document.getElementById('search-input').value.toLowerCase();
-        const filteredCompanies = companies.filter(company =>
-            company.nome.toLowerCase().includes(searchInput) || 
-            company.descricao.toLowerCase().includes(searchInput)
-        );
-        showCompanies('todas', filteredCompanies);
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-
         });
     </script>
 </body>
