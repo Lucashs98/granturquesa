@@ -114,28 +114,6 @@
             width: 100%;
             border-radius: 5px;
         }
-
-        .search-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        #search-input {
-            padding: 8px;
-            font-size: 16px;
-            width: 60%;
-            margin-right: 10px;
-        }
-
-        #search-button {
-            padding: 8px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
     </style>
 </head>
 <body>
@@ -154,11 +132,6 @@
             <option value="LOJAS">LOJAS</option>
             <!-- Adicione mais categorias conforme necessário -->
         </select>
-    </div>
-
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Pesquisar...">
-        <button id="search-button" onclick="searchCompanies()">Buscar</button>
     </div>
 
     <div class="gallery" id="company-gallery">
@@ -223,16 +196,6 @@
                 const selectedCategory = filterSelect.value;
                 showCompanies(selectedCategory);
             });
-
-            // Função de pesquisa de empresas
-            function searchCompanies() {
-                const searchInput = document.getElementById('search-input').value.toLowerCase();
-                const filteredCompanies = companies.filter(company =>
-                    company.nome.toLowerCase().includes(searchInput) || 
-                    company.descricao.toLowerCase().includes(searchInput)
-                );
-                showCompanies('searchCompanies', filteredCompanies); // Correção aqui
-            }
 
             // Exibir todas as empresas ao carregar a página
             showCompanies('todas');
