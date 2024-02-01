@@ -224,6 +224,9 @@
                 showCompanies(selectedCategory);
             });
 
+                        // Exibir todas as empresas ao carregar a página
+            showCompanies('todas');
+            
             // Função de pesquisa de empresas
             function searchCompanies() {
         const searchInput = document.getElementById('search-input').value.toLowerCase();
@@ -236,8 +239,6 @@
 
     document.addEventListener('DOMContentLoaded', function () {
 
-            // Exibir todas as empresas ao carregar a página
-            showCompanies('todas');
         });
     </script>
 </body>
