@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Empresa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .company-details-page {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .company-details-page img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .company-details-page img:hover {
+            transform: scale(1.1);
+        }
+
+        .company-details-page h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .photo-grid img:hover {
+            transform: scale(1.1);
+        }
+
+        .company-details-page p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .contact-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="company-details-page">
+        <h1>Nome da Empresa</h1>
+
+        <div class="photo-grid">
+            <img src="caminho/para/foto1.jpg" alt="Foto 1">
+            <img src="caminho/para/foto2.jpg" alt="Foto 2">
+            <img src="caminho/para/foto3.jpg" alt="Foto 3">
+            <img src="caminho/para/foto4.jpg" alt="Foto 4">
+        </div>
+
+        <p>
+            Descrição completa da empresa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ex at tellus convallis eleifend.
+            Sed id consectetur mauris. Nulla facilisi. Proin et elit nec tellus consectetur volutpat nec nec erat.
+            Curabitur volutpat urna eu quam efficitur, non laoreet odio tincidunt. Vivamus quis hendrerit arcu.
+        </p>
+
+        <a href="#" class="contact-button">Entrar em Contato</a>
+    </div>
+
+</body>
+</html>
