@@ -146,8 +146,8 @@
         document.addEventListener('DOMContentLoaded', function () {
             const companies = [
                 // Dados das empresas
-                { categoria: 'SERVIÇOS', nome: 'FARBE', descricao: 'IMPRESSÃO DIGITAL', contato: 'farbe_detalhes.html', img: 'https://raw.githubusercontent.com/byia/granturquesa/main/FARBE.jpg' },
-                { categoria: 'LOJAS', nome: 'JM', descricao: 'TSHIRTS', contato: '@jm_tshirts4', img: 'https://raw.githubusercontent.com/byia/granturquesa/main/JM.jpg' },
+                { categoria: 'SERVIÇOS', nome: 'FARBE', descricao: 'IMPRESSÃO DIGITAL', DETALHES: 'farbe_detalhes.html', img: 'https://raw.githubusercontent.com/byia/granturquesa/main/FARBE.jpg' },
+                { categoria: 'LOJAS', nome: 'JM', descricao: 'TSHIRTS', DETALHES: '@jm_tshirts4', img: 'https://raw.githubusercontent.com/byia/granturquesa/main/JM.jpg' },
                 // Adicione mais empresas conforme necessário
             ];
 
@@ -168,7 +168,7 @@
                             <img src="${company.img}" alt="Logo da ${company.nome}">
                             <h2>${company.nome}</h2>
                             <p>${company.descricao}</p>
-                            <a href="${company.contato}" class="contact-button">Contato</a>
+                            <a href="${company.DETALHES}" class="contact-button">DETALHES</a>
                         `;
 
                         companyDiv.addEventListener('click', function () {
@@ -186,7 +186,7 @@
                 companyDetailsContainer.innerHTML = `
                     <h2>${company.nome}</h2>
                     <p>${company.descricao}</p>
-                    <a href="${company.contato}" class="contact-button">Contato</a>
+                    <a href="${company.DETALHES}" class="contact-button">DETALHES</a>
                     <img src="${company.img}" alt="Logo da ${company.nome}">
                 `;
             }
